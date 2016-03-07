@@ -1,0 +1,22 @@
+
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile(group: 'org.postgresql', name: 'postgresql', version: '9.4.1208')
+}
+
+mainClassName = 'PostgresNPE'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
